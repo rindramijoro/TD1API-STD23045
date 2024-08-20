@@ -1,0 +1,28 @@
+Info:
+  nom: STD23045 - TD1
+  version: 1.0.0
+
+Server:
+  URL: https://localhost.STD23045.com
+
+Path:
+  /customers:
+    get:
+      response:
+        200:
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Customer"
+
+Components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        name:
+          type: string
+        age:
+          type: integer
